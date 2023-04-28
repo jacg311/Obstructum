@@ -1,6 +1,9 @@
 {
-    "obstructum.shulker_box": "This shulkerbox is obstructed",
-    "obstructum.chest": "This chest is obstructed",
-    "obstructum.ender_chest": "This ender chest is obstructed",
-    "obstructum.villager_trade": "Cannot trade with this villager"
+    "block.minecraft.bed.occupied": "This Bed is occupied",
+    "block.minecraft.bed.obstructed": "This Bed is obstructed",
+    "block.minecraft.bed.too_far_away": "You may not rest now; the Bed is too far away",
+    "obstructum.shulker_box": "This Shulker Box is obstructed",
+    "obstructum.chest": "This Chest is obstructed",
+    "obstructum.ender_chest": "This Ender Chest is obstructed",
+    "obstructum.villager_trade": "Cannot trade with this Villager"
 }
