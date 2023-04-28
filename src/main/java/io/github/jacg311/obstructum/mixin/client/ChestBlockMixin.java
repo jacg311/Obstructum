@@ -1,4 +1,4 @@
-package io.github.jacg311.obstructum.mixin;
+package io.github.jacg311.obstructum.mixin.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
@@ -39,7 +39,7 @@ public abstract class ChestBlockMixin {
 
     @Inject(method = "onUse", at = @At("HEAD"))
     private void obstructum$sendMessageIfCantOpen(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        if (!world.isClient || !(state.getBlock() instanceof ChestBlock)) return;
+        if (!world.isClient() || !(state.getBlock() instanceof ChestBlock)) return;
 
         ChestType type = state.get(CHEST_TYPE);
         Direction direction = state.get(FACING);

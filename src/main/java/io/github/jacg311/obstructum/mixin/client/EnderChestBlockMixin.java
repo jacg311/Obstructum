@@ -1,4 +1,4 @@
-package io.github.jacg311.obstructum.mixin;
+package io.github.jacg311.obstructum.mixin.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.EnderChestBlock;
@@ -20,7 +20,7 @@ public class EnderChestBlockMixin {
 
     @Inject(method = "onUse", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/ActionResult;success(Z)Lnet/minecraft/util/ActionResult;"))
     private void obstructum$sendMessageIfCantOpen(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        if (world.isClient) {
+        if (world.isClient()) {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.translatable("obstructum.ender_chest"), false);
         }
     }

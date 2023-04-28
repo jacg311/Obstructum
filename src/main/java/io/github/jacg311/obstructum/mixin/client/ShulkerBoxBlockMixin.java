@@ -1,4 +1,4 @@
-package io.github.jacg311.obstructum.mixin;
+package io.github.jacg311.obstructum.mixin.client;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShulkerBoxBlock;
@@ -26,7 +26,7 @@ public abstract class ShulkerBoxBlockMixin {
 
     @Inject(method = "onUse", at = @At("HEAD"))
     private void obstructum$sendMessageIfCantOpen(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
-        if (!world.isClient || !(world.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity shulkerBoxBE)) return;
+        if (!world.isClient() || !(world.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity shulkerBoxBE)) return;
 
         if (!canOpen(state, world, pos, shulkerBoxBE)) {
             MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.translatable("obstructum.shulker_box"), false);
