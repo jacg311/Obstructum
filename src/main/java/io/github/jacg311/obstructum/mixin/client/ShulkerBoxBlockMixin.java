@@ -1,11 +1,10 @@
 package io.github.jacg311.obstructum.mixin.client;
 
+import io.github.jacg311.obstructum.Util;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.block.entity.ShulkerBoxBlockEntity;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -29,7 +28,7 @@ public abstract class ShulkerBoxBlockMixin {
         if (!world.isClient() || !(world.getBlockEntity(pos) instanceof ShulkerBoxBlockEntity shulkerBoxBE)) return;
 
         if (!canOpen(state, world, pos, shulkerBoxBE)) {
-            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.translatable("obstructum.shulker_box"), false);
+            Util.sendOverLayMessage("obstructum.shulker_box");
         }
     }
 }

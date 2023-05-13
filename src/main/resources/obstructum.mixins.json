@@ -7,7 +7,8 @@
         "client.ChestBlockMixin",
         "client.EnderChestBlockMixin",
         "client.ShulkerBoxBlockMixin",
-        "client.VillagerEntityMixin"
+        "client.VillagerEntityMixin",
+        "client.CakeBlockMixin"
     ],
     "injectors": {
         "defaultRequire": 1

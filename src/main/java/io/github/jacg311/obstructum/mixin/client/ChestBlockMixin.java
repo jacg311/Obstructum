@@ -1,16 +1,12 @@
 package io.github.jacg311.obstructum.mixin.client;
 
+import io.github.jacg311.obstructum.Util;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
-import net.minecraft.block.DoubleBlockProperties;
-import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.enums.ChestType;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -24,8 +20,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Optional;
 
 @Mixin(ChestBlock.class)
 public abstract class ChestBlockMixin {
@@ -56,7 +50,7 @@ public abstract class ChestBlockMixin {
         }
 
         if (locked) {
-            MinecraftClient.getInstance().inGameHud.setOverlayMessage(Text.translatable("obstructum.chest"), false);
+            Util.sendOverLayMessage("obstructum.chest");
         }
     }
 }

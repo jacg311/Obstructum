@@ -5,5 +5,6 @@
     "obstructum.shulker_box": "This Shulker Box is obstructed",
     "obstructum.chest": "This Chest is obstructed",
     "obstructum.ender_chest": "This Ender Chest is obstructed",
-    "obstructum.villager_trade": "Cannot trade with this Villager"
+    "obstructum.villager_trade": "Cannot trade with this Villager",
+    "obstructum.cake": "Cannot eat cake"
 }
